@@ -19,7 +19,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 <!--        <mvc:resources mapping="/savar/**" location="/savar/"/>-->
 <!--        <mvc:resources mapping="/hello/**" location="/hello/"/>-->
-
+        <!--配置视图解析器-->
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>

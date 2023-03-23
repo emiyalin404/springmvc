@@ -8,12 +8,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>INDEX</title>
+    <script type="text/javascript">
+        const user = {
+            name: "秦晨阳",
+            age: 30,
+            sex: "男"
+        };
+        // js对象转为json并打印
+        console.log(JSON.stringify(user));
+        // json转为JS并打印
+        console.log(JSON.parse(JSON.stringify(user)));
+    </script>
 </head>
 <body>
-<h1>User Info</h1>
-<%--<p>ID: ${savar.id}</p>--%>
-<p>Name: ${name}</p>
-<%--<p>Age: ${savar.age}</p>--%>
 </body>
 </html>
+
