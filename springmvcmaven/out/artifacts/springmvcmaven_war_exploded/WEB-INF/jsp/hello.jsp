@@ -12,5 +12,6 @@
 </head>
 <body>
 <h1>你好，Spring MVC</h1>
+<h1 style="color: red">${user.name}</h1>
 </body>
 </html>
