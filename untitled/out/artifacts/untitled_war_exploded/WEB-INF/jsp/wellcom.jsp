@@ -13,7 +13,8 @@
     </script>
 </head>
 <body>
-<h1>歡迎${user.name}登陸成功，您的用户号号为${user.id}</h1>
+<h1>用戶名:${user.name}</h1>
+<h1>租戶號${user.id}</h1>
 </body>
 
 </html>
