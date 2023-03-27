@@ -12,7 +12,7 @@ public class HelloController {
     public String hello(User user, ModelMap map){
 
         if("00000".equals(user.getId()) && "西安凌安".equals(user.getName()) && "888888".equals(user.getPassword())){
-            System.out.println("歡迎"+user.getName()+"登陸成功，您的用户號号為"+user.getId());
+            System.out.println("歡迎"+user.getName()+"登陸成功，您的用户号為"+user.getId());
             map.addAttribute(user);
             return "wellcom";
         }
