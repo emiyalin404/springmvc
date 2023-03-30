@@ -19,7 +19,6 @@ public class Student {
     private Date update;
 
     public Student(){
-
     }
     public Student(int id, String name, int age, String email, String creatTime, String update) throws ParseException {
         SimpleDateFormat format =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -82,8 +81,6 @@ public class Student {
 
     @Override
     public String toString() {
-//        SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        SimpleDateFormat format2=new SimpleDateFormat("yyyy-MM-dd HH:mm");
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
