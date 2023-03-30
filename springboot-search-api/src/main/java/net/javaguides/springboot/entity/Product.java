@@ -1,5 +1,6 @@
 package net.javaguides.springboot.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,8 +17,7 @@ import java.time.LocalDateTime;
 @Table(name="product")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @JsonProperty
     private String ITEM_NO;
     private String ITEM_NAME;
     private Long PRICE;
