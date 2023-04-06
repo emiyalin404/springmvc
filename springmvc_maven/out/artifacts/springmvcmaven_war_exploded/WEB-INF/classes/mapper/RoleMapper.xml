@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis .org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syscom.lingan.dao.RoleMapper">
+
+    <select id="queryRoleAndUser" parameterType="String" resultMap="RoleAndUser">
+        SELECT
+            r.type,
+            r.rolename,
+            u.`name`,
+            u.age,
+            u.sex,
+            u.role
+        FROM
+            role r
+            INNER JOIN USER u ON u.role =r.type
+        WHERE
+            type =#{typeId}
+    </select>
+    
+    <resultMap id="RoleAndUser" type="com.syscom.lingan.To.RoleTo">
+        <result property="type" column="type"/>
+        <result property="rolename" column="rolename"/>
+        
+        <collection property="userList" ofType="User">
+            <result property="id" column="id"/>
+            <result property="name" column="name"/>
+            <result property="age" column="age"/>
+            <result property="sex" column="sex"/>
+            <result property="role" column="role"/>
+        </collection>
+    </resultMap>
+    
+</mapper>
