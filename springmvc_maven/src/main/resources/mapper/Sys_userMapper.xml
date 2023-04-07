@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis .org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syscom.lingan.dao.Sys_userMapper">
+
+    <insert id="addSys_user" parameterType="Sys_user">
+        INSERT INTO `sys_user`
+            (`USER_ID`,`USER_NAME`,`PASSWORD`)
+        VALUES ( #{USER_ID}, #{USER_NAME},#{PASSWORD} );
+    </insert>
+
+    <select id="queryAllSys_user" resultType="Sys_user">
+        SELECT * FROM sys_user;
+    </select>
+
+    <update id="updateSys_user" parameterType="Sys_user">
+        update `sys_user` set USER_NAME=#{USER_NAME},PASSWORD=#{PASSWORD} WHERE USER_ID=#{USER_ID}
+    </update>
+
+    <select id="searchSys_user" parameterType="Sys_user" resultType="Sys_user">
+        SELECT * FROM `sys_user`
+        <where>
+            <choose>
+                <when test="USER_ID !=null">
+                    USER_ID = #{USER_ID}
+                </when>
+                <when test="USER_NAME != null">
+                    AND USER_NAME like CONCAT('%',#{USER_NAME},'%') ;
+                </when>
+                <when test="PASSWORD != null">
+                    AND PASSWORD like CONCAT('%',#{PASSWORD},'%') ;
+                </when>
+                <otherwise>
+                    AND 1=1
+                </otherwise>
+            </choose>
+
+        </where>
+    </select>
+
+    <delete id="deleteSys_user" parameterType="Sys_user">
+        DELETE FROM `sys_user` WHERE USER_ID = #{USER_ID};
+    </delete>
+</mapper>

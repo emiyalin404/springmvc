@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis .org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syscom.lingan.dao.ProductMapper">
+
+    <select id="queryAllProductAndBase_param" resultMap="ProductAndBase_param">
+        SELECT
+            p.`ITEM_NO`,
+            p.`ITEM_NAME`,
+            p.`PRICE`,
+            p.`EFF_DATE_FROM`,
+            p.`EFF_DATE_TO`,
+            p.`TAX`,
+            p.`CREATOR`,
+            p.`CREATE_TIME`,
+            p.`UPDATER`,
+            b.`TITLE`,
+            b.`TAG`,
+            b.`SEQ_NO`,
+            b.`CONTENT`,
+            b.`CONTENT_ZH_CN`,
+            b.`CONTENT_ZH_TW`,
+            b.`CONTENT_EN_US`,
+            b.`LANGUAGE`,
+            b.`NOTES`,
+            b.`STATUS`,
+            b.`CREATOR`,
+            b.`CREATE_TIME`,
+            b.`UPDATER`
+        FROM
+            product p,
+            base_param b
+        WHERE
+            p.TAX=b.TAG;
+    </select>
+    
+    
+    <resultMap id="ProductAndBase_param" type="com.syscom.lingan.To.ProductTo">
+        <result property="ITEM_NO" column="ITEM_NO"/>
+        <result property="ITEM_NAME" column="ITEM_NAME"/>
+        <result property="PRICE" column="PRICE"/>
+        <result property="EFF_DATE_FROM" column="EFF_DATE_FROM"/>
+        <result property="EFF_DATE_TO" column="EFF_DATE_TO"/>
+        <result property="TAX" column="TAX"/>
+        <result property="CREATOR" column="CREATOR"/>
+        <result property="CREATE_TIME" column="CREATE_TIME"/>
+        <result property="UPDATER" column="UPDATER"/>
+
+
+        <association property="base_paramDetail" javaType="Base_param">
+            <result property="TITLE" column="TITLE"/>
+            <result property="TAG" column="TAG"/>
+            <result property="SEQ_NO" column="SEQ_NO"/>
+            <result property="CONTENT" column="CONTENT"/>
+            <result property="CONTENT_ZH_CN" column="CONTENT_ZH_CN"/>
+            <result property="CONTENT_ZH_TW" column="CONTENT_ZH_TW"/>
+            <result property="CONTENT_EN_US" column="CONTENT_EN_US"/>
+            <result property="LANGUAGE" column="LANGUAGE"/>
+            <result property="NOTES" column="NOTES"/>
+            <result property="STATUS" column="STATUS"/>
+            <result property="CREATOR" column="CREATOR"/>
+            <result property="CREATE_TIME" column="CREATE_TIME"/>
+            <result property="UPDATER" column="UPDATER"/>
+        </association>
+    </resultMap>
+   
+</mapper>
