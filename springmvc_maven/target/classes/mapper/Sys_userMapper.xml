@@ -7,7 +7,7 @@
     <insert id="addSys_user" parameterType="Sys_user">
         INSERT INTO `sys_user`
             (`USER_ID`,`USER_NAME`,`PASSWORD`)
-        VALUES ( #{USER_ID}, #{USER_NAME},#{PASSWORD} );
+        VALUES ( #{USER_ID}, #{user_NAME},#{PASSWORD} );
     </insert>
 
     <select id="queryAllSys_user" resultType="Sys_user">
