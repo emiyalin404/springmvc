@@ -18,6 +18,7 @@ public class ProductController {
 
     @GetMapping("/search")
     public ResponseEntity<List<Product>>searchProducts(@RequestParam("query") String query){
+        System.out.println("13123");
         return ResponseEntity.ok(productService.searchProducts(query));
     }
 

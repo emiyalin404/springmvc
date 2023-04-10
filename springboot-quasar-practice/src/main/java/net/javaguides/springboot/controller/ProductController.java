@@ -20,7 +20,10 @@ public class ProductController {
     public ResponseEntity<List<Product>>searchProducts(@RequestParam("query") String query){
         return ResponseEntity.ok(productService.searchProducts(query));
     }
-
+    @RequestMapping("/searchall")
+    public ResponseEntity<List<Product>> searchProductall(@RequestBody Product product){
+        return productService.searchProductall(product);
+    }
     @PostMapping
     public Product createProduct(@RequestBody Product product){
         return  productService.createProduct(product);

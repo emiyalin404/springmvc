@@ -20,6 +20,11 @@ public class ProductServiceImpl implements ProductService {
         List<Product> products= productRepository.searchProducts(query);
         return products;
     }
+    @Override
+    public List<Product>searchProductall(String queryAll){
+        List<Product> productall=productRepository.searchProductall(queryAll);
+        return  productall;
+    }
 
     @Override
     public Product createProduct(Product product) {
