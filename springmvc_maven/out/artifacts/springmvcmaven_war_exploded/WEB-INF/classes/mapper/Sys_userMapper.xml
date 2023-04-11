@@ -6,8 +6,8 @@
 
     <insert id="addSys_user" parameterType="Sys_user">
         INSERT INTO `sys_user`
-            (`USER_ID`,`USER_NAME`,`PASSWORD`)
-        VALUES ( #{USER_ID}, #{user_NAME},#{PASSWORD} );
+            (`USER_ID`,`USER_NAME`,`PASSWORD`,`CREATOR`)
+        VALUES ( #{userId}, #{userName},#{passWord},#{creaTor} );
     </insert>
 
     <select id="queryAllSys_user" resultType="Sys_user">
@@ -15,21 +15,21 @@
     </select>
 
     <update id="updateSys_user" parameterType="Sys_user">
-        update `sys_user` set USER_NAME=#{USER_NAME},PASSWORD=#{PASSWORD} WHERE USER_ID=#{USER_ID}
+        update `sys_user` set USER_NAME=#{userName},PASSWORD=#{passWord} WHERE USER_ID=#{userId}
     </update>
 
     <select id="searchSys_user" parameterType="Sys_user" resultType="Sys_user">
         SELECT * FROM `sys_user`
         <where>
             <choose>
-                <when test="USER_ID !=null">
-                    USER_ID = #{USER_ID}
+                <when test="userId !=null">
+                    USER_ID = #{userId}
                 </when>
-                <when test="USER_NAME != null">
-                    AND USER_NAME like CONCAT('%',#{USER_NAME},'%') ;
+                <when test="userName != null">
+                    AND USER_NAME like CONCAT('%',#{userName},'%') ;
                 </when>
-                <when test="PASSWORD != null">
-                    AND PASSWORD like CONCAT('%',#{PASSWORD},'%') ;
+                <when test="passWord != null">
+                    AND `PASSWORD` like CONCAT('%',#{passWord},'%') ;
                 </when>
                 <otherwise>
                     AND 1=1
@@ -40,6 +40,8 @@
     </select>
 
     <delete id="deleteSys_user" parameterType="Sys_user">
-        DELETE FROM `sys_user` WHERE USER_ID = #{USER_ID};
+        DELETE FROM `sys_user` WHERE USER_ID = #{userId};
     </delete>
+
+
 </mapper>

@@ -14,8 +14,9 @@ public class Base_paramController {
     private Base_paramService base_paramService;
 
     @RequestMapping("queryBase_paramAndProduct")
-    public Base_paramTo queryBase_paramAndProduct(@RequestParam("TAG") String TAG){
-        return base_paramService.queryBase_paramAndProduct(TAG);
+    public Base_paramTo queryBase_paramAndProduct(@RequestParam("tag") String tag){
+        System.out.println(base_paramService.queryBase_paramAndProduct(tag));
+        return base_paramService.queryBase_paramAndProduct(tag);
     }
 
 }

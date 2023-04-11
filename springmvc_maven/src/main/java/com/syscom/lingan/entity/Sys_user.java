@@ -5,106 +5,117 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Sys_user implements Serializable {
 
-    private String USER_ID;
-    private String USER_NAME;
-    private String PASSWORD;
-    private Boolean IS_VALID;
-    private String CREATOR;
-    private LocalDateTime CREATE_TIME;
-    private String UPDATER;
-    private LocalDateTime UPDATE_TIME;
+    @JsonProperty("USER_ID")
+    private String userId;
+    @JsonProperty("USER_NAME")
+    private String userName;
+    @JsonProperty("PASSWORD")
+    private String passWord;
+    @JsonProperty("IS_VALID")
+    private Boolean isValid;
+    @JsonProperty("CREATOR")
+    private String creaTor;
+    @JsonProperty("CREATE_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date  createTime;
+    @JsonProperty("UPDATER")
+    private String upDater;
+    @JsonProperty("UPDATE_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date upDateTime;
     public Sys_user(){
     }
 
-    public Sys_user(String USER_ID, String USER_NAME, String PASSWORD, Boolean IS_VALID, String CREATOR, LocalDateTime CREATE_TIME, String UPDATER, LocalDateTime UPDATE_TIME) {
-        this.USER_ID = USER_ID;
-        this.USER_NAME = USER_NAME;
-        this.PASSWORD = PASSWORD;
-        this.IS_VALID = IS_VALID;
-        this.CREATOR = CREATOR;
-        this.CREATE_TIME = CREATE_TIME;
-        this.UPDATER = UPDATER;
-        this.UPDATE_TIME = UPDATE_TIME;
+    public Sys_user(String userId, String userName, String passWord, Boolean isValid, String creaTor, Date createTime, String upDater, Date upDateTime) {
+        this.userId = userId;
+        this.userName = userName;
+        this.passWord = passWord;
+        this.isValid = isValid;
+        this.creaTor = creaTor;
+        this.createTime = createTime;
+        this.upDater = upDater;
+        this.upDateTime = upDateTime;
     }
 
-    public String getUSER_ID() {
-        return USER_ID;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUSER_ID(String USER_ID) {
-        this.USER_ID = USER_ID;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getUSER_NAME() {
-        return USER_NAME;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUSER_NAME(String USER_NAME) {
-        this.USER_NAME = USER_NAME;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getPASSWORD() {
-        return PASSWORD;
+    public String getPassWord() {
+        return passWord;
     }
 
-    public void setPASSWORD(String PASSWORD) {
-        this.PASSWORD = PASSWORD;
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 
-    public Boolean getIS_VALID() {
-        return IS_VALID;
+    public Boolean getValid() {
+        return isValid;
     }
 
-    public void setIS_VALID(Boolean IS_VALID) {
-        this.IS_VALID = IS_VALID;
+    public void setValid(Boolean valid) {
+        isValid = valid;
     }
 
-    public String getCREATOR() {
-        return CREATOR;
+    public String getCreaTor() {
+        return creaTor;
     }
 
-    public void setCREATOR(String CREATOR) {
-        this.CREATOR = CREATOR;
+    public void setCreaTor(String creaTor) {
+        this.creaTor = creaTor;
     }
 
-    public LocalDateTime getCREATE_TIME() {
-        return CREATE_TIME;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCREATE_TIME(LocalDateTime CREATE_TIME) {
-        this.CREATE_TIME = CREATE_TIME;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getUPDATER() {
-        return UPDATER;
+    public String getUpDater() {
+        return upDater;
     }
 
-    public void setUPDATER(String UPDATER) {
-        this.UPDATER = UPDATER;
+    public void setUpDater(String upDater) {
+        this.upDater = upDater;
     }
 
-    public LocalDateTime getUPDATE_TIME() {
-        return UPDATE_TIME;
+    public Date getUpDateTime() {
+        return upDateTime;
     }
 
-    public void setUPDATE_TIME(LocalDateTime UPDATE_TIME) {
-        this.UPDATE_TIME = UPDATE_TIME;
+    public void setUpDateTime(Date upDateTime) {
+        this.upDateTime = upDateTime;
     }
 
     @Override
     public String toString() {
         return "Sys_user{" +
-                "USER_ID='" + USER_ID + '\'' +
-                ", USER_NAME='" + USER_NAME + '\'' +
-                ", PASSWORD='" + PASSWORD + '\'' +
-                ", IS_VALID=" + IS_VALID +
-                ", CREATOR='" + CREATOR + '\'' +
-                ", CREATE_TIME=" + CREATE_TIME +
-                ", UPDATER='" + UPDATER + '\'' +
-                ", UPDATE_TIME=" + UPDATE_TIME +
+                "userId='" + userId + '\'' +
+                ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                ", isValid=" + isValid +
+                ", creaTor='" + creaTor + '\'' +
+                ", createTime=" + createTime +
+                ", upDater='" + upDater + '\'' +
+                ", upDateTime=" + upDateTime +
                 '}';
     }
 }

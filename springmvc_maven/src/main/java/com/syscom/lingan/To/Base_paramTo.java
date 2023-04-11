@@ -1,159 +1,178 @@
 package com.syscom.lingan.To;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.syscom.lingan.entity.Product;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 public class Base_paramTo implements Serializable {
-    private String TITLE;
-    private String TAG;
-    private int SEQ_NO;
-    private String CONTENT;
-    private String CONTENT_ZH_CN;
-    private String CONTENT_ZH_TW;
-    private String CONTENT_EN_US;
-    private String LANGUAGE;
-    private String NOTES;
-    private String STATUS;
-    private String CREATOR;
-    private LocalDateTime CREATE_TIME;
-    private String UPDATER;
-    private LocalDateTime UPDATE_TIME;
+    @JsonProperty("TITLE")
+    private String tiTle;
+    @JsonProperty("TAG")
+    private String tag;
+    @JsonProperty("SEQ_NO")
+    private int seqNo;
+    @JsonProperty("CONTENT")
+    private String conTent;
+    @JsonProperty("CONTENT_ZH_CN")
+    private String conTentZhCh;
+    @JsonProperty("CONTENT_ZH_TW")
+    private String conTentZhTw;
+    @JsonProperty("CONTENT_EN_US")
+    private String conTentEnUs;
+    @JsonProperty("LANGUAGE")
+    private String lanGuage;
+    @JsonProperty("NOTES")
+    private String noTes;
+    @JsonProperty("STATUS")
+    private String staTus;
+    @JsonProperty("CREATOR")
+    private String creaTor;
+    @JsonProperty("CREATE_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date createTime;
+    @JsonProperty("UPDATER")
+    private String upDater;
+    @JsonProperty("UPDATE_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date upDateTime;
 
     private List<Product> productList;
     public Base_paramTo(){
     };
 
-    public Base_paramTo(String TITLE, String TAG, int SEQ_NO, String CONTENT, String CONTENT_ZH_CN, String CONTENT_ZH_TW, String CONTENT_EN_US, String LANGUAGE, String NOTES, String STATUS, String CREATOR, LocalDateTime CREATE_TIME, String UPDATER, LocalDateTime UPDATE_TIME, List<Product> productList) {
-        this.TITLE = TITLE;
-        this.TAG = TAG;
-        this.SEQ_NO = SEQ_NO;
-        this.CONTENT = CONTENT;
-        this.CONTENT_ZH_CN = CONTENT_ZH_CN;
-        this.CONTENT_ZH_TW = CONTENT_ZH_TW;
-        this.CONTENT_EN_US = CONTENT_EN_US;
-        this.LANGUAGE = LANGUAGE;
-        this.NOTES = NOTES;
-        this.STATUS = STATUS;
-        this.CREATOR = CREATOR;
-        this.CREATE_TIME = CREATE_TIME;
-        this.UPDATER = UPDATER;
-        this.UPDATE_TIME = UPDATE_TIME;
+    public Base_paramTo(String tiTle, String tag, int seqNo, String conTent, String conTentZhCh, String conTentZhTw, String conTentEnUs, String lanGuage, String noTes, String staTus, String creaTor, Date createTime, String upDater, Date upDateTime, List<Product> productList) {
+        this.tiTle = tiTle;
+        this.tag = tag;
+        this.seqNo = seqNo;
+        this.conTent = conTent;
+        this.conTentZhCh = conTentZhCh;
+        this.conTentZhTw = conTentZhTw;
+        this.conTentEnUs = conTentEnUs;
+        this.lanGuage = lanGuage;
+        this.noTes = noTes;
+        this.staTus = staTus;
+        this.creaTor = creaTor;
+        this.createTime = createTime;
+        this.upDater = upDater;
+        this.upDateTime = upDateTime;
         this.productList = productList;
     }
 
-    public String getTITLE() {
-        return TITLE;
+    public String getTiTle() {
+        return tiTle;
     }
 
-    public void setTITLE(String TITLE) {
-        this.TITLE = TITLE;
+    public void setTiTle(String tiTle) {
+        this.tiTle = tiTle;
     }
 
-    public String getTAG() {
-        return TAG;
+    public String getTag() {
+        return tag;
     }
 
-    public void setTAG(String TAG) {
-        this.TAG = TAG;
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
-    public int getSEQ_NO() {
-        return SEQ_NO;
+    public int getSeqNo() {
+        return seqNo;
     }
 
-    public void setSEQ_NO(int SEQ_NO) {
-        this.SEQ_NO = SEQ_NO;
+    public void setSeqNo(int seqNo) {
+        this.seqNo = seqNo;
     }
 
-    public String getCONTENT() {
-        return CONTENT;
+    public String getConTent() {
+        return conTent;
     }
 
-    public void setCONTENT(String CONTENT) {
-        this.CONTENT = CONTENT;
+    public void setConTent(String conTent) {
+        this.conTent = conTent;
     }
 
-    public String getCONTENT_ZH_CN() {
-        return CONTENT_ZH_CN;
+    public String getConTentZhCh() {
+        return conTentZhCh;
     }
 
-    public void setCONTENT_ZH_CN(String CONTENT_ZH_CN) {
-        this.CONTENT_ZH_CN = CONTENT_ZH_CN;
+    public void setConTentZhCh(String conTentZhCh) {
+        this.conTentZhCh = conTentZhCh;
     }
 
-    public String getCONTENT_ZH_TW() {
-        return CONTENT_ZH_TW;
+    public String getConTentZhTw() {
+        return conTentZhTw;
     }
 
-    public void setCONTENT_ZH_TW(String CONTENT_ZH_TW) {
-        this.CONTENT_ZH_TW = CONTENT_ZH_TW;
+    public void setConTentZhTw(String conTentZhTw) {
+        this.conTentZhTw = conTentZhTw;
     }
 
-    public String getCONTENT_EN_US() {
-        return CONTENT_EN_US;
+    public String getConTentEnUs() {
+        return conTentEnUs;
     }
 
-    public void setCONTENT_EN_US(String CONTENT_EN_US) {
-        this.CONTENT_EN_US = CONTENT_EN_US;
+    public void setConTentEnUs(String conTentEnUs) {
+        this.conTentEnUs = conTentEnUs;
     }
 
-    public String getLANGUAGE() {
-        return LANGUAGE;
+    public String getLanGuage() {
+        return lanGuage;
     }
 
-    public void setLANGUAGE(String LANGUAGE) {
-        this.LANGUAGE = LANGUAGE;
+    public void setLanGuage(String lanGuage) {
+        this.lanGuage = lanGuage;
     }
 
-    public String getNOTES() {
-        return NOTES;
+    public String getNoTes() {
+        return noTes;
     }
 
-    public void setNOTES(String NOTES) {
-        this.NOTES = NOTES;
+    public void setNoTes(String noTes) {
+        this.noTes = noTes;
     }
 
-    public String getSTATUS() {
-        return STATUS;
+    public String getStaTus() {
+        return staTus;
     }
 
-    public void setSTATUS(String STATUS) {
-        this.STATUS = STATUS;
+    public void setStaTus(String staTus) {
+        this.staTus = staTus;
     }
 
-    public String getCREATOR() {
-        return CREATOR;
+    public String getCreaTor() {
+        return creaTor;
     }
 
-    public void setCREATOR(String CREATOR) {
-        this.CREATOR = CREATOR;
+    public void setCreaTor(String creaTor) {
+        this.creaTor = creaTor;
     }
 
-    public LocalDateTime getCREATE_TIME() {
-        return CREATE_TIME;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCREATE_TIME(LocalDateTime CREATE_TIME) {
-        this.CREATE_TIME = CREATE_TIME;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getUPDATER() {
-        return UPDATER;
+    public String getUpDater() {
+        return upDater;
     }
 
-    public void setUPDATER(String UPDATER) {
-        this.UPDATER = UPDATER;
+    public void setUpDater(String upDater) {
+        this.upDater = upDater;
     }
 
-    public LocalDateTime getUPDATE_TIME() {
-        return UPDATE_TIME;
+    public Date getUpDateTime() {
+        return upDateTime;
     }
 
-    public void setUPDATE_TIME(LocalDateTime UPDATE_TIME) {
-        this.UPDATE_TIME = UPDATE_TIME;
+    public void setUpDateTime(Date upDateTime) {
+        this.upDateTime = upDateTime;
     }
 
     public List<Product> getProductList() {
@@ -167,20 +186,20 @@ public class Base_paramTo implements Serializable {
     @Override
     public String toString() {
         return "Base_paramTo{" +
-                "TITLE='" + TITLE + '\'' +
-                ", TAG='" + TAG + '\'' +
-                ", SEQ_NO=" + SEQ_NO +
-                ", CONTENT='" + CONTENT + '\'' +
-                ", CONTENT_ZH_CN='" + CONTENT_ZH_CN + '\'' +
-                ", CONTENT_ZH_TW='" + CONTENT_ZH_TW + '\'' +
-                ", CONTENT_EN_US='" + CONTENT_EN_US + '\'' +
-                ", LANGUAGE='" + LANGUAGE + '\'' +
-                ", NOTES='" + NOTES + '\'' +
-                ", STATUS='" + STATUS + '\'' +
-                ", CREATOR='" + CREATOR + '\'' +
-                ", CREATE_TIME=" + CREATE_TIME +
-                ", UPDATER='" + UPDATER + '\'' +
-                ", UPDATE_TIME=" + UPDATE_TIME +
+                "tiTle='" + tiTle + '\'' +
+                ", tag='" + tag + '\'' +
+                ", seqNo=" + seqNo +
+                ", conTent='" + conTent + '\'' +
+                ", conTentZhCh='" + conTentZhCh + '\'' +
+                ", conTentZhTw='" + conTentZhTw + '\'' +
+                ", conTentEnUs='" + conTentEnUs + '\'' +
+                ", lanGuage='" + lanGuage + '\'' +
+                ", noTes='" + noTes + '\'' +
+                ", staTus='" + staTus + '\'' +
+                ", creaTor='" + creaTor + '\'' +
+                ", createTime=" + createTime +
+                ", upDater='" + upDater + '\'' +
+                ", upDateTime=" + upDateTime +
                 ", productList=" + productList +
                 '}';
     }

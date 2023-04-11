@@ -16,7 +16,7 @@ public class Sys_userController {
 
     @RequestMapping("addSys_user")
     public int addSys_user(@RequestBody Sys_user sys_user){
-//        System.out.println(sys_user+"111111111111111111111111111111111111111111111111111111111111111111111111");
+        System.out.println(sys_user);
         return sys_userService.addSys_user(sys_user);
     }
 
@@ -27,6 +27,7 @@ public class Sys_userController {
 
     @RequestMapping("queryAllSys_user")
     public List<Sys_user> queryAllSys_user(){
+        System.out.println(sys_userService.queryAllSys_user().get(10).getUserId()+"123123");
         return  sys_userService.queryAllSys_user();
     }
 

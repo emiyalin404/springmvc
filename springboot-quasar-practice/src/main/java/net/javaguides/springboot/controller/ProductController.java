@@ -21,8 +21,8 @@ public class ProductController {
         return ResponseEntity.ok(productService.searchProducts(query));
     }
     @RequestMapping("/searchall")
-    public ResponseEntity<List<Product>> searchProductall(@RequestBody Product product){
-        return productService.searchProductall(product);
+    public List<Product> searchProductall(){
+        return productService.searchProductall();
     }
     @PostMapping
     public Product createProduct(@RequestBody Product product){

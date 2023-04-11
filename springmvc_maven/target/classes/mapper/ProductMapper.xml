@@ -37,31 +37,29 @@
     
     
     <resultMap id="ProductAndBase_param" type="com.syscom.lingan.To.ProductTo">
-        <result property="ITEM_NO" column="ITEM_NO"/>
-        <result property="ITEM_NAME" column="ITEM_NAME"/>
-        <result property="PRICE" column="PRICE"/>
-        <result property="EFF_DATE_FROM" column="EFF_DATE_FROM"/>
-        <result property="EFF_DATE_TO" column="EFF_DATE_TO"/>
-        <result property="TAX" column="TAX"/>
-        <result property="CREATOR" column="CREATOR"/>
-        <result property="CREATE_TIME" column="CREATE_TIME"/>
-        <result property="UPDATER" column="UPDATER"/>
-
-
+        <result property="itemNo" column="ITEM_NO"/>
+        <result property="itemName" column="ITEM_NAME"/>
+        <result property="price" column="PRICE"/>
+        <result property="effDateFrom" column="EFF_DATE_FROM"/>
+        <result property="effDateTo" column="EFF_DATE_TO"/>
+        <result property="tax" column="TAX"/>
+        <result property="creaTor" column="CREATOR"/>
+        <result property="createTime" column="CREATE_TIME"/>
+        <result property="upDater" column="UPDATER"/>
         <association property="base_paramDetail" javaType="Base_param">
-            <result property="TITLE" column="TITLE"/>
-            <result property="TAG" column="TAG"/>
-            <result property="SEQ_NO" column="SEQ_NO"/>
-            <result property="CONTENT" column="CONTENT"/>
-            <result property="CONTENT_ZH_CN" column="CONTENT_ZH_CN"/>
-            <result property="CONTENT_ZH_TW" column="CONTENT_ZH_TW"/>
-            <result property="CONTENT_EN_US" column="CONTENT_EN_US"/>
-            <result property="LANGUAGE" column="LANGUAGE"/>
-            <result property="NOTES" column="NOTES"/>
-            <result property="STATUS" column="STATUS"/>
-            <result property="CREATOR" column="CREATOR"/>
-            <result property="CREATE_TIME" column="CREATE_TIME"/>
-            <result property="UPDATER" column="UPDATER"/>
+            <result property="tiTle" column="TITLE"/>
+            <result property="tag" column="TAG"/>
+            <result property="seqNo" column="SEQ_NO"/>
+            <result property="conTent" column="CONTENT"/>
+            <result property="conTentZhCh" column="CONTENT_ZH_CN"/>
+            <result property="conTentZhTw" column="CONTENT_ZH_TW"/>
+            <result property="conTentEnUs" column="CONTENT_EN_US"/>
+            <result property="lanGuage" column="LANGUAGE"/>
+            <result property="noTes" column="NOTES"/>
+            <result property="staTus" column="STATUS"/>
+            <result property="creaTor" column="CREATOR"/>
+            <result property="createTime" column="CREATE_TIME"/>
+            <result property="upDater" column="UPDATER"/>
         </association>
     </resultMap>
    

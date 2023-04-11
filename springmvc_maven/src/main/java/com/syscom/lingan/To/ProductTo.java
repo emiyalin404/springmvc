@@ -1,131 +1,151 @@
 package com.syscom.lingan.To;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.syscom.lingan.entity.Base_param;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class ProductTo implements Serializable {
-    private String ITEM_NO;
-    private String ITEM_NAME;
-    private BigDecimal PRICE;
-    private LocalDate EFF_DATE_FROM;
-    private LocalDate EFF_DATE_TO;
-    private String TAX;
-    private String CREATOR;
-    private LocalDateTime CREATE_TIME;
-    private String UPDATER;
-    private LocalDateTime UPDATE_TIME;
-    private LocalDateTime creater_time;
+//    @JsonProperty("ITEM_NO")
+    private String itemNo;
+//    @JsonProperty("ITEM_NAME")
+    private String itemName;
+//    @JsonProperty("PRICE")
+    private BigDecimal price;
+
+//    @JsonProperty("EFF_DATE_FROM")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date effDateFrom;
+//    @JsonProperty("EFF_DATE_TO")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date effDateTo;
+//    @JsonProperty("TAX")
+    private String tax;
+//    @JsonProperty("CREATOR")
+    private String creaTor;
+//    @JsonProperty("CREATE_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date createTime;
+//    @JsonProperty("UPDATER")
+    private String upDater;
+//    @JsonProperty("UPDATE_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date upDateTime;
+//    @JsonProperty("creater_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date creatertime;
 
     private Base_param base_paramDetail;
 
     public ProductTo(){
     }
 
-    public ProductTo(String ITEM_NO, String ITEM_NAME, BigDecimal PRICE, LocalDate EFF_DATE_FROM, LocalDate EFF_DATE_TO, String TAX, String CREATOR, LocalDateTime CREATE_TIME, String UPDATER, LocalDateTime UPDATE_TIME, LocalDateTime creater_time, Base_param base_paramDetail) {
-        this.ITEM_NO = ITEM_NO;
-        this.ITEM_NAME = ITEM_NAME;
-        this.PRICE = PRICE;
-        this.EFF_DATE_FROM = EFF_DATE_FROM;
-        this.EFF_DATE_TO = EFF_DATE_TO;
-        this.TAX = TAX;
-        this.CREATOR = CREATOR;
-        this.CREATE_TIME = CREATE_TIME;
-        this.UPDATER = UPDATER;
-        this.UPDATE_TIME = UPDATE_TIME;
-        this.creater_time = creater_time;
+    public ProductTo(String itemNo, String itemName, BigDecimal price, Date effDateFrom, Date effDateTo, String tax, String creaTor, Date createTime, String upDater, Date upDateTime, Date creatertime, Base_param base_paramDetail) {
+        this.itemNo = itemNo;
+        this.itemName = itemName;
+        this.price = price;
+        this.effDateFrom = effDateFrom;
+        this.effDateTo = effDateTo;
+        this.tax = tax;
+        this.creaTor = creaTor;
+        this.createTime = createTime;
+        this.upDater = upDater;
+        this.upDateTime = upDateTime;
+        this.creatertime = creatertime;
         this.base_paramDetail = base_paramDetail;
     }
 
-    public String getITEM_NO() {
-        return ITEM_NO;
+    public String getItemNo() {
+        return itemNo;
     }
 
-    public void setITEM_NO(String ITEM_NO) {
-        this.ITEM_NO = ITEM_NO;
+    public void setItemNo(String itemNo) {
+        this.itemNo = itemNo;
     }
 
-    public String getITEM_NAME() {
-        return ITEM_NAME;
+    public String getItemName() {
+        return itemName;
     }
 
-    public void setITEM_NAME(String ITEM_NAME) {
-        this.ITEM_NAME = ITEM_NAME;
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
-    public BigDecimal getPRICE() {
-        return PRICE;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setPRICE(BigDecimal PRICE) {
-        this.PRICE = PRICE;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
-    public LocalDate getEFF_DATE_FROM() {
-        return EFF_DATE_FROM;
+    public Date getEffDateFrom() {
+        return effDateFrom;
     }
 
-    public void setEFF_DATE_FROM(LocalDate EFF_DATE_FROM) {
-        this.EFF_DATE_FROM = EFF_DATE_FROM;
+    public void setEffDateFrom(Date effDateFrom) {
+        this.effDateFrom = effDateFrom;
     }
 
-    public LocalDate getEFF_DATE_TO() {
-        return EFF_DATE_TO;
+    public Date getEffDateTo() {
+        return effDateTo;
     }
 
-    public void setEFF_DATE_TO(LocalDate EFF_DATE_TO) {
-        this.EFF_DATE_TO = EFF_DATE_TO;
+    public void setEffDateTo(Date effDateTo) {
+        this.effDateTo = effDateTo;
     }
 
-    public String getTAX() {
-        return TAX;
+    public String getTax() {
+        return tax;
     }
 
-    public void setTAX(String TAX) {
-        this.TAX = TAX;
+    public void setTax(String tax) {
+        this.tax = tax;
     }
 
-    public String getCREATOR() {
-        return CREATOR;
+    public String getCreaTor() {
+        return creaTor;
     }
 
-    public void setCREATOR(String CREATOR) {
-        this.CREATOR = CREATOR;
+    public void setCreaTor(String creaTor) {
+        this.creaTor = creaTor;
     }
 
-    public LocalDateTime getCREATE_TIME() {
-        return CREATE_TIME;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCREATE_TIME(LocalDateTime CREATE_TIME) {
-        this.CREATE_TIME = CREATE_TIME;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getUPDATER() {
-        return UPDATER;
+    public String getUpDater() {
+        return upDater;
     }
 
-    public void setUPDATER(String UPDATER) {
-        this.UPDATER = UPDATER;
+    public void setUpDater(String upDater) {
+        this.upDater = upDater;
     }
 
-    public LocalDateTime getUPDATE_TIME() {
-        return UPDATE_TIME;
+    public Date getUpDateTime() {
+        return upDateTime;
     }
 
-    public void setUPDATE_TIME(LocalDateTime UPDATE_TIME) {
-        this.UPDATE_TIME = UPDATE_TIME;
+    public void setUpDateTime(Date upDateTime) {
+        this.upDateTime = upDateTime;
     }
 
-    public LocalDateTime getCreater_time() {
-        return creater_time;
+    public Date getCreatertime() {
+        return creatertime;
     }
 
-    public void setCreater_time(LocalDateTime creater_time) {
-        this.creater_time = creater_time;
+    public void setCreatertime(Date creatertime) {
+        this.creatertime = creatertime;
     }
 
     public Base_param getBase_paramDetail() {
@@ -139,17 +159,17 @@ public class ProductTo implements Serializable {
     @Override
     public String toString() {
         return "ProductTo{" +
-                "ITEM_NO='" + ITEM_NO + '\'' +
-                ", ITEM_NAME='" + ITEM_NAME + '\'' +
-                ", PRICE=" + PRICE +
-                ", EFF_DATE_FROM=" + EFF_DATE_FROM +
-                ", EFF_DATE_TO=" + EFF_DATE_TO +
-                ", TAX='" + TAX + '\'' +
-                ", CREATOR='" + CREATOR + '\'' +
-                ", CREATE_TIME=" + CREATE_TIME +
-                ", UPDATER='" + UPDATER + '\'' +
-                ", UPDATE_TIME=" + UPDATE_TIME +
-                ", creater_time=" + creater_time +
+                "itemNo='" + itemNo + '\'' +
+                ", itemName='" + itemName + '\'' +
+                ", price=" + price +
+                ", effDateFrom=" + effDateFrom +
+                ", effDateTo=" + effDateTo +
+                ", tax='" + tax + '\'' +
+                ", creaTor='" + creaTor + '\'' +
+                ", createTime=" + createTime +
+                ", upDater='" + upDater + '\'' +
+                ", upDateTime=" + upDateTime +
+                ", creatertime=" + creatertime +
                 ", base_paramDetail=" + base_paramDetail +
                 '}';
     }
