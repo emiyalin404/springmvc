@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis .org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syscom.lingan.dao.Sys_menuMapper">
+    <select id="queryallmenu" resultType="com.syscom.lingan.entity.Sys_menu">
+    SELECT * FROM `sys_menu` WHERE ISNULL(`P_MENU_ID` )
+    </select>
+
+</mapper>

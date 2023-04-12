@@ -13,7 +13,7 @@ public class ProductServiceImpl implements ProductService {
 @Autowired
     private ProductMapper productMapper;
 
-public List<ProductTo> queryAllProductAndBase_param(){
+    public List<ProductTo> queryAllProductAndBase_param(){
     return productMapper.queryAllProductAndBase_param();
     }
 }

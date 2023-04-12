@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis .org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syscom.lingan.dao.MenuInfoMapper">
+    <select id="QuerymenuInfo"  resultMap="menuInfo">
+        SELECT
+            A.MENU_ID,
+            A.MENU_NAME,
+            A.P_MENU_ID,
+            A.SEQ_NO,
+            A.PAGE,
+            A.ICON,
+            A.PATH,
+            -- A.children,
+            NULL AS BREADCRUMB,
+            A.CREATOR,
+            A.CREATE_TIME,
+            A.UPDATER,
+            A.UPDATE_TIME,
+            B.MENU_ID AS MENU_ID_B,
+            B.MENU_NAME AS MENU_NAME_B,
+            B.P_MENU_ID AS P_MENU_ID_B,
+            B.SEQ_NO AS SEQ_NO_B,
+            B.PAGE AS PAGE_B,
+            B.ICON AS ICON_B,
+            B.PATH AS PATH_B,
+            NULL AS children_B,
+            CONCAT(B.P_MENU_ID,'@',A.ICON,'@@',B.MENU_ID,'@',B.ICON,'@',B.PATH) AS BREADCRUMB_B,
+            B.CREATOR AS CREATOR_B,
+            B.CREATE_TIME AS CREATE_TIME_B,
+            B.UPDATER AS UPDATER_B,
+            B.UPDATE_TIME AS UPDATE_TIME_B
+        FROM
+                ( SELECT * FROM `quasar_test`.`sys_menu` WHERE ISNULL( P_MENU_ID ) ) A
+                    INNER JOIN ( SELECT * FROM `quasar_test`.`sys_menu` WHERE ! ISNULL( P_MENU_ID ) ) B ON A.MENU_ID = B.P_MENU_ID
+    </select>
+
+    <resultMap id="menuInfo" type="com.syscom.lingan.To.MenuInfoTo">
+        <result property ="MENU_ID" column="MENU_ID"/>
+        <result property="MENU_NAME" column="MENU_NAME"/>
+        <result property="P_MENU_ID" column="P_MENU_ID"/>
+        <result property="SEQ_NO" column="SEQ_NO"/>
+        <result property="PAGE" column="PAGE"/>
+        <result property="ICON" column="ICON"/>
+        <result property="PATH" column="PATH"/>
+        <result property="BREADCRUMB" column="BREADCRUMB"/>
+        <result property="CREATOR" column="CREATOR"/>
+        <result property="CREATE_TIME" column="CREATE_TIME"/>
+        <result property="UPDATER" column="UPDATER"/>
+        <result property="UPDATE_TIME" column="UPDATE_TIME"/>
+
+        <collection property="children" ofType="com.syscom.lingan.To.Children">
+            <result property ="MENU_ID" column="MENU_ID_B"/>
+            <result property="MENU_NAME" column="MENU_NAME_B"/>
+            <result property="P_MENU_ID" column="P_MENU_ID_B"/>
+            <result property="SEQ_NO" column="SEQ_NO_B"/>
+            <result property="PAGE" column="PAGE_B"/>
+            <result property="ICON" column="ICON_B"/>
+            <result property="PATH" column="PATH_B"/>
+            <result property="children" column="children_B"/>
+            <result property="BREADCRUMB" column="BREADCRUMB_B"/>
+            <result property="CREATOR" column="CREATOR_B"/>
+            <result property="CREATE_TIME" column="CREATE_TIME_B"/>
+            <result property="UPDATER" column="UPDATER_B"/>
+            <result property="UPDATE_TIME" column="UPDATE_TIME_B"/>
+
+        </collection>
+
+    </resultMap>
+</mapper>

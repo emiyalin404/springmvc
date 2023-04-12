@@ -29,10 +29,10 @@
             b.`CREATE_TIME`,
             b.`UPDATER`
         FROM
-            product p,
-            base_param b
+            product p
+            JOIN base_param b on b.TAG=p.TAX
         WHERE
-            p.TAX=b.TAG;
+            b.TITLE='TAX'
     </select>
     
     

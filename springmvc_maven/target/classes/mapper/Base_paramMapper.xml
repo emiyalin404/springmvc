@@ -33,13 +33,13 @@
         WHERE
         TAG=#{TAGparam}
     </select>
-    
+
     <resultMap id="Base_paramAndProduct" type="com.syscom.lingan.To.Base_paramTo">
         <result property="tag" column="TAG"/>
         <result property="conTentZhCh" column="CONTENT_ZH_CN"/>
 <!--        <result property="CONTENT_ZH_TW" column="CONTENT_ZH_TW"/>-->
 <!--        <result property="CONTENT_EN_US" column="CONTENT_EN_US"/>-->
-        
+
         <collection property="productList" ofType="com.syscom.lingan.entity.Product">
             <result property="itemNo" column="ITEM_NO"/>
             <result property="itemName" column="ITEM_NAME"/>

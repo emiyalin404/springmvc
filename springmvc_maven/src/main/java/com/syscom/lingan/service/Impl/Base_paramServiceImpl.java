@@ -11,7 +11,7 @@ public class Base_paramServiceImpl implements Base_paramService {
     @Autowired
     private Base_paramMapper base_paramMapper;
     @Override
-    public Base_paramTo queryBase_paramAndProduct(String TAG) {
-        return base_paramMapper.queryBase_paramAndProduct(TAG);
+    public Base_paramTo queryBase_paramAndProduct(String TAX) {
+        return base_paramMapper.queryBase_paramAndProduct(TAX);
     }
 }
